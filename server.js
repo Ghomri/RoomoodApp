@@ -61,10 +61,9 @@ io.on('connection', socket => {
 
 });
 
-const hostname = '0.0.0.0';
-const port = 3000; //|| process.env.PORT;
+const port = 5000 || process.env.PORT;
 
-server.listen(port, () => console.log(`Server running on post ${port}`));
+// server.listen(port, () => console.log(`Server running on post ${port}`));
 
 // const server = http.createServer((req, res) => {
 //     res.statusCode = 200;

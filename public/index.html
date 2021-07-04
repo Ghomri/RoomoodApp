@@ -76,7 +76,7 @@
 			}
 
 			window.onload = () => {
-				if (localStorage.Name != 0) {
+				if (localStorage.Name != undefined) {
 					document.getElementById("username").value = localStorage.Name;
 				}
 			}

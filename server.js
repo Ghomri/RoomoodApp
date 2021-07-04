@@ -16,7 +16,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 const botName = 'Roomood Bot';
 
 // Run when client connects
-
 io.on('connection', socket => {
     console.log('New WS Connection...'); // Not required
 

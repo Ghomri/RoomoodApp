@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<title>Roomood App</title>
+
+		<link rel="stylesheet" href="css/chat.css" />
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Varela+Round&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="join-container">
+			<header class="join-header">
+				<h1 class="logo">
+					Roomood
+					<span class="material-icons">sms</span>
+				</h1>
+			</header>
+			<main class="join-main">
+				<form action="chat.html">
+					<div class="form-control">
+						<label for="username">Username</label>
+						<input
+							type="text"
+							name="username"
+							id="username"
+							placeholder="Enter username..."
+							required
+							onblur="saveName()"
+						/>
+					</div>
+					<div class="form-control">
+						<label for="room">Room</label>
+						<select type="text" name="room" id="room">
+							<option value="Just Chatting">Just Chatting</option>
+							<option value="Gaming Station">Gaming Station</option>
+							<option value="Infernus">Infernus</option>
+							<option value="The Meme Team">The Meme Team</option>
+							<option value="The Chamber of Secrets">The Chamber of Secrets</option>
+							<option value="Girl Gang">Girl Gang</option>
+							<option value="Master Minds">Master Minds</option>
+						</select>
+					</div>
+					<button type="submit" class="btn">
+						<span class="btn-text">
+							Join Chat
+						</span>
+					</button>
+				</form>
+			</main>
+		</div>
+		<div class="toggle-switch front">
+			<label class="switch">
+				<input id="theme-switch" type="checkbox">
+				<span class="theme-switch-icon">
+				  <span class="material-icons dark">
+					dark_mode
+				  </span> 
+				  <span class="material-icons light">
+					light_mode
+				  </span>
+				</span>
+			</label>
+		</div>
+
+		<script src="js/localstorage.js"></script>
+
+		<script>
+			saveName = () => {
+				localStorage.Name = document.getElementById("username").value;
+			}
+
+			window.onload = () => {
+				if (localStorage.Name != 0) {
+					document.getElementById("username").value = localStorage.Name;
+				}
+			}
+		</script>
+	</body>
+</html>
+
+<!--
+	// ADD ON IDEAS - TO DO: 
+
+	[0]  X  Color and styling for message from your self
+	[1]     Room list not as select, but list, where you can see how many logged in to room
+	[2]  X  Dark mode toggle WebStorage
+	[3]     Profile/color circle with first letter in name, with random picked colors
+	[4]  X  Dark/light sun/moon icon styling
+	[5]  X  Scrollbar styling
+	[6]  X  Roomood bot own color
+	[7]  X  Add room name to welcome text form bot
+	[8]  X  Animation to chat messages
+	[9]     Online circles that changes color from green to yellow after gone in 2min
+	[10] X  WebStorage remember last username
+	[11] X  Favicon
+
+-->
